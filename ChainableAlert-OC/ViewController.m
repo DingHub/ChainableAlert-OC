@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "ZRDChainableAlert.h"
 #import "UIViewController+ZRDChainableAlert.h"
 
 @interface ViewController ()
