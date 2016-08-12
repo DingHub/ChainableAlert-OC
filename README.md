@@ -49,5 +49,10 @@ or
     NSLog(@"showed");
  });
 ```
-
+Pod supported:
+```
+target 'YourTarget' do
+pod 'ChainableAlert-OC'
+end
+```
 You can find a Swift version [HERE](https://github.com/DingHub/ChainableAlert)
