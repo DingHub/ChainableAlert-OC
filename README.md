@@ -1,7 +1,7 @@
 # ChainableAlert-OC
 Chainable use of Alert.<br>
 ---
-We have a helper named ZRDChainableAlert, and a category of UIViewController to add chainable use of alert.<br>
+We have a helper named ZRDChainableAlert, and a category of UIViewController to add chainable usage of alert.<br>
 If the device is below iOS 8, UIAlertView or UIActionSheet will be used, else, UIAlertController will be used.<br>
 Usage:
 ---
