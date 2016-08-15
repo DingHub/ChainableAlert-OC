@@ -11,43 +11,27 @@ in view controller:
 #import "UIViewController+ZRDChainableAlert.h"
 ```
 ```
-[self actionSheet:@"Title" message:@"message"]
-    .normalButton(@"normal1")
-    .handler(^{
-        NSLog(@"normal1");
-    })
-    .normalButton(@"normal2")
-    .normalButton(@"normal3")
-    .destructiveButton(@"destructive1")
-    .handler (^{
-        NSLog(@"destructive1");
-    })
-    .destructiveButton(@"destructive2")
-    .cancelButton(@"cancel")
-    .show()
-    .animated(YES)
-    .completion(nil);
-```
-or
-```
-  [ZRDChainableAlert alert:@"Title" message:@"message"]
+ [self actionSheet:@"Title" message:@"message"]
  .normalButton(@"normal1")
+ .handler(^{
+    NSLog(@"normal1");
+ })
  .normalButton(@"normal2")
  .normalButton(@"normal3")
- .handler(^{
-    NSLog(@"normal3");
- })
  .destructiveButton(@"destructive1")
  .handler (^{
     NSLog(@"destructive1");
  })
  .destructiveButton(@"destructive2")
  .cancelButton(@"cancel")
- .show(self)
+ .show()
  .animated(YES)
- .completion(^{
-    NSLog(@"showed");
- });
+ .completion(nil);
+
+```
+or
+```
+
 ```
 Pod supported:
 ```
