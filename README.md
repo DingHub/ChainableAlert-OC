@@ -11,22 +11,22 @@ in view controller:
 #import "UIViewController+ZRDChainableAlert.h"
 ```
 ```
- [self actionSheet:@"Title" message:@"message"]
- .normalButton(@"normal1")
- .handler(^{
-    NSLog(@"normal1");
- })
- .normalButton(@"normal2")
- .normalButton(@"normal3")
- .destructiveButton(@"destructive1")
- .handler (^{
-    NSLog(@"destructive1");
- })
- .destructiveButton(@"destructive2")
- .cancelButton(@"cancel")
- .show()
- .animated(YES)
- .completion(nil);
+[self actionSheet:@"Title" message:@"message"]
+    .normalButton(@"normal1")
+    .handler(^(ZRDChainableAlert *alert) {
+        NSLog(@"normal1");
+    })
+    .normalButton(@"normal2")
+    .normalButton(@"normal3")
+    .destructiveButton(@"destructive1")
+    .handler (^(ZRDChainableAlert *alert) {
+        NSLog(@"destructive1");
+    })
+    .destructiveButton(@"destructive2")
+    .cancelButton(@"cancel")
+    .show()
+    .animated(YES)
+    .completion(nil);
 
 ```
 or an laert with textFeilds:
