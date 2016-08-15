@@ -41,10 +41,9 @@
         NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
     })
     .cancelButton(@"cancel")
-    .show(self)
+    .show()
     .animated(YES)
     .completion(nil);
-
     
 }
 @end

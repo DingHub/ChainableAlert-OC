@@ -19,13 +19,13 @@
  1.
  [self actionSheet:@"Title" message:@"message"]
  .normalButton(@"normal1")
- .handler(^{
+ .handler(^(ZRDChainableAlert *alert) {
     NSLog(@"normal1");
  })
  .normalButton(@"normal2")
  .normalButton(@"normal3")
  .destructiveButton(@"destructive1")
- .handler (^{
+ .handler (^(ZRDChainableAlert *alert) {
     NSLog(@"destructive1");
  })
  .destructiveButton(@"destructive2")

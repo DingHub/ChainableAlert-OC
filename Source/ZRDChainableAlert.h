@@ -17,17 +17,17 @@
  [ZRDChainableAlert alert:@"Title" message:@"message"]
  .textField()
  .configrationHandler(^(UITextField *textField) {
- textField.placeholder = @"UserName";
+    textField.placeholder = @"UserName";
  })
  .textField()
  .configrationHandler(^(UITextField *textField) {
  textField.placeholder = @"Password";
- textField.secureTextEntry = YES;
+    textField.secureTextEntry = YES;
  })
  .normalButton(@"Login")
  .handler(^(ZRDChainableAlert *alert) {
- NSArray *textFields = alert.textFields;
- NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
+    NSArray *textFields = alert.textFields;
+    NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
  })
  .cancelButton(@"cancel")
  .show(aViewController)
