@@ -41,6 +41,9 @@ typedef void(^ZRDAlertButtonAction)();
 typedef ZRDChainableAlert * (^ZRDAlertButtonTitleReceiver)(NSString *);
 typedef ZRDChainableAlert * (^ZRDAlertButtonActionReceiver)(ZRDAlertButtonAction);
 typedef ZRDChainableAlert * (^ZRDAlertShowReceiver)(UIViewController *);
+typedef void (^ZRDAlertTextFeildConfigration)(UITextField *);
+typedef ZRDChainableAlert * (^ZRDAlertTextFeildReceiver)();
+typedef ZRDChainableAlert * (^ZRDAlertTextFeildConfigReceiver)(ZRDAlertTextFeildConfigration);
 typedef ZRDChainableAlert * (^ZRDAlertAnimationReceiver)(BOOL);
 typedef ZRDChainableAlert * (^ZRDSourceRectReceiver)(CGRect);
 typedef void (^ZRDCompletion)();
@@ -76,6 +79,16 @@ typedef void (^ZRDCompletionReceriver)(ZRDCompletion);
  *  Add button action
  */
 - (ZRDAlertButtonActionReceiver)handler;
+
+/**
+ *  Add a textFeild to the alert, if is under iOS 8.0 or is action sheet, no use.
+ */
+- (ZRDAlertTextFeildReceiver)textField;
+
+/**
+ *  Config the textFeild, if is under iOS 8.0 or is action sheet, no use.
+ */
+- (ZRDAlertTextFeildConfigReceiver)configrationHandler;
 
 /**
  *  Actually pass self as a weak point to the alert

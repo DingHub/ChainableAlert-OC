@@ -25,13 +25,19 @@
 
 - (IBAction)showAlert:(id)sender {
     
-    [self actionSheet:@"Title" message:@"message"]
+    [self alert:@"Title" message:@"message"]
     .normalButton(@"normal1")
     .handler(^{
         NSLog(@"normal1");
     })
     .normalButton(@"normal2")
     .normalButton(@"normal3")
+    .textFeild()
+    .configrationHandler(^(UITextField *textField) {
+        textField.placeholder = @"Input here.";
+    })
+    .textFeild()
+    .textFeild()
     .destructiveButton(@"destructive1")
     .handler (^{
         NSLog(@"destructive1");
