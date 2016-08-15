@@ -58,17 +58,17 @@
 typedef UIViewController * (^ZRDControllerAlertButtonTitleReceiver)(NSString *);
 typedef UIViewController * (^ZRDControllerAlertButtonActionReceiver)(ZRDAlertButtonAction);
 typedef UIViewController * (^ZRDControllerAlertTextFieldReceiver)();
-typedef UIViewController * (^ZRDControllerAlertTextFieldConfigReceiver)(ZRDAlertTextFieldConfigration);
+typedef UIViewController * (^ZRDControllerAlertTextFieldConfigReceiver)(ZRDAlertTextFieldConfiguration);
 typedef UIViewController * (^ZRDControllerAlertVoidReceiver)();
 typedef UIViewController * (^ZRDControllerAlertShowAnimationReceiver)(BOOL);
 typedef UIViewController * (^ZRDControllerSourceRectReceiver)(CGRect);
 
 /**
- *  Create an alert
+ *  Create alert, actually UIAlertView if the device is below iOS 8 or UIAlertController for iOS 8 and later
  */
 - (instancetype)alert:(NSString *)title message:(NSString *)message;
 /**
- *  Create an action sheet
+ *  Create alert, actually UIActionSheet if the device is below iOS 8 or UIAlertController for iOS 8 and later
  */
 - (instancetype)actionSheet:(NSString *)title message:(NSString *)message;
 
@@ -77,7 +77,7 @@ typedef UIViewController * (^ZRDControllerSourceRectReceiver)(CGRect);
  */
 - (ZRDControllerAlertButtonTitleReceiver)normalButton;
 /**
- *  Add a destructive button to the alert
+ *  Add a destructive button to the alert, we can add more than 1 for iOS 8 and later, BUT, if below iOS 8, this func will do nothing for alertView, and only one destructive button will added for actionSheet
  */
 - (ZRDControllerAlertButtonTitleReceiver)destructiveButton;
 /**
@@ -91,14 +91,14 @@ typedef UIViewController * (^ZRDControllerSourceRectReceiver)(CGRect);
 - (ZRDControllerAlertButtonActionReceiver)handler;
 
 /**
- *  Add a textField to the alert, if is action sheet, no use.
+ *  Add a textField to the alert, if is under iOS 8.0 or is action sheet, no use.
  */
 - (ZRDControllerAlertTextFieldReceiver)textField;
 
 /**
- *  Config the textField, if is action sheet, no use.
+ *  Config the textField, if is under iOS 8.0 or is action sheet, no use.
  */
-- (ZRDControllerAlertTextFieldConfigReceiver)configrationHandler;
+- (ZRDControllerAlertTextFieldConfigReceiver)configurationHandler;
 
 /**
  *  Actually pass self as a weak point to the alert
@@ -106,12 +106,12 @@ typedef UIViewController * (^ZRDControllerSourceRectReceiver)(CGRect);
 - (ZRDControllerAlertVoidReceiver)show;
 
 /**
- *
+ *  If below iOS 8 , no use.
  */
 - (ZRDControllerAlertShowAnimationReceiver)animated;
 
 /**
- *  If is action sheet, and device is iPad, we can set the source rect for the popover controller
+ *  If UIAlertController used, and style is action sheet, and device is iPad, we can set the source rect for the popover controller
  */
 - (ZRDControllerSourceRectReceiver)sourceRect;
 

@@ -27,18 +27,18 @@
     
     [self alert:@"Title" message:@"message"]
     .textField()
-    .configrationHandler(^(UITextField *textField) {
+    .configurationHandler(^(UITextField *textField) {
         textField.placeholder = @"UserName";
     })
     .textField()
-    .configrationHandler(^(UITextField *textField) {
+    .configurationHandler(^(UITextField *textField) {
         textField.placeholder = @"Password";
         textField.secureTextEntry = YES;
     })
     .normalButton(@"Login")
     .handler(^(ZRDChainableAlert *alert) {
         NSArray *textFields = alert.textFields;
-        NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
+        NSLog(@"\nUsername:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
     })
     .cancelButton(@"cancel")
     .show()
