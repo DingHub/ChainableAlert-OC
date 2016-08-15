@@ -33,11 +33,11 @@
     .normalButton(@"normal2")
     .normalButton(@"normal3")
     .textFeild()
+    .textFeild()
+    .textFeild()
     .configrationHandler(^(UITextField *textField) {
         textField.placeholder = @"Input here.";
     })
-    .textFeild()
-    .textFeild()
     .destructiveButton(@"destructive1")
     .handler (^{
         NSLog(@"destructive1");

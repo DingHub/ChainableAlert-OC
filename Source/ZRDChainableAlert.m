@@ -51,6 +51,7 @@ static NSMutableArray<ZRDAlertButtonAction> *alertButtonActions;
 @property (nonatomic, strong) NSMutableArray<ZRDAlertButtonAction> *destructiveActions;
 @property (nonatomic, copy) ZRDAlertButtonAction cancelAction;
 @property (nonatomic, strong) NSMutableArray<ZRDAlertTextFeildConfigration> *textFeildConfigrations;
+@property (nonatomic, assign) BOOL textFeildConfiged;
 /**
  *  1-normal, 2-destructiv, 3-cancel
  */
@@ -70,6 +71,7 @@ static NSMutableArray<ZRDAlertButtonAction> *alertButtonActions;
     self.message = message;
     self.style = style;
     
+    self.textFeildConfiged = YES;
     return self;
 
 }
@@ -115,6 +117,7 @@ static NSMutableArray<ZRDAlertButtonAction> *alertButtonActions;
  */
 - (ZRDAlertTextFeildReceiver)textField {
     return ^ZRDChainableAlert * () {
+        self.textFeildConfiged = NO;
         [self.textFeildConfigrations addObject:^(UITextField *textField){}];
         return self;
     };
@@ -125,6 +128,8 @@ static NSMutableArray<ZRDAlertButtonAction> *alertButtonActions;
  */
 - (ZRDAlertTextFeildConfigReceiver)configrationHandler {
     return ^ZRDChainableAlert * (ZRDAlertTextFeildConfigration configration) {
+        NSAssert(self.textFeildConfiged == NO, @"There must have a text field, otherwise, we can't config.");
+        self.textFeildConfiged = YES;
         if (configration) {
             [self.textFeildConfigrations replaceObjectAtIndex:self.textFeildConfigrations.count-1 withObject:configration];
         }

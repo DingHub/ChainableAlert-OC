@@ -22,6 +22,10 @@ typedef void(^ZRDAlertButtonAction)();
  .handler(^{
     NSLog(@"normal3");
  })
+ .textFeild()
+ .configrationHandler(^(UITextField *textField) {
+    textField.placeholder = @"Input here.";
+ })
  .destructiveButton(@"destructive1")
  .handler (^{
     NSLog(@"destructive1");
