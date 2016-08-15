@@ -88,9 +88,6 @@ NS_ENUM(NSInteger, AlertStyle) {
     };
 }
 
-/**
- *  Add a textField to the alert, if is under iOS 8.0 or is action sheet, no use.
- */
 - (ZRDAlertTextFieldReceiver)textField {
     return ^ZRDChainableAlert * () {
         self.textFieldConfiged = NO;
@@ -99,9 +96,6 @@ NS_ENUM(NSInteger, AlertStyle) {
     };
 }
 
-/**
- *  Config the textField, if is under iOS 8.0 or is action sheet, no use.
- */
 - (ZRDAlertTextFieldConfigReceiver)configrationHandler {
     return ^ZRDChainableAlert * (ZRDAlertTextFieldConfigration configration) {
         NSAssert(self.textFieldConfiged == NO, @"There must have a text field, otherwise, we can't config.");

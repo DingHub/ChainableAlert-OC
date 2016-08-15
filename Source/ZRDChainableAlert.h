@@ -69,12 +69,12 @@ typedef void (^ZRDCompletion)();
 typedef void (^ZRDCompletionReceriver)(ZRDCompletion);
 
 /**
- *  Create alert, actually UIAlertView if the device is below iOS 8 or UIAlertController for iOS 8 and later
+ *  Create an alert
  */
 + (instancetype)alert:(NSString *)title message:(NSString *)message;
 
 /**
- *  Create alert, actually UIActionSheet if the device is below iOS 8 or UIAlertController for iOS 8 and later
+ *  Create an action sheet
  */
 + (instancetype)actionSheet:(NSString *)title message:(NSString *)message;
 
@@ -85,7 +85,7 @@ typedef void (^ZRDCompletionReceriver)(ZRDCompletion);
 - (ZRDAlertButtonTitleReceiver)normalButton;
 
 /**
- *  Add a destructive button to the alert, we can add more than 1 for iOS 8 and later, BUT, if below iOS 8, this func will do nothing for alertView, and only one destructive button will added for actionSheet
+ *  Add a destructive button to the alert
  */
 - (ZRDAlertButtonTitleReceiver)destructiveButton;
 
@@ -100,12 +100,12 @@ typedef void (^ZRDCompletionReceriver)(ZRDCompletion);
 - (ZRDAlertButtonActionReceiver)handler;
 
 /**
- *  Add a textField to the alert, if is under iOS 8.0 or is action sheet, no use.
+ *  Add a textField to the alert, if is action sheet, no use.
  */
 - (ZRDAlertTextFieldReceiver)textField;
 
 /**
- *  Config the textField, if is under iOS 8.0 or is action sheet, no use.
+ *  Config the textField, if is action sheet, no use.
  */
 - (ZRDAlertTextFieldConfigReceiver)configrationHandler;
 
@@ -115,12 +115,12 @@ typedef void (^ZRDCompletionReceriver)(ZRDCompletion);
 - (ZRDAlertShowReceiver)show;
 
 /**
- *  If below iOS 8 , no use.
+ *
  */
 - (ZRDAlertAnimationReceiver)animated;
 
 /**
- *  If UIAlertController used, and style is action sheet, and device is iPad, we can set the source rect for the popover controller
+ *  If is action sheet, and device is iPad, we can set the source rect for the popover controller
  */
 - (ZRDSourceRectReceiver)sourceRect;
 
