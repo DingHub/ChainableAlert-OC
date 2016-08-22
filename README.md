@@ -23,7 +23,7 @@ in view controller:
     })
     .destructiveButton(@"destructive2")
     .cancelButton(@"cancel")
-    .show()
+    .show
     .animated(YES)
     .completion(nil);
 
@@ -46,7 +46,7 @@ or an laert with textFeilds:
         NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
     })
     .cancelButton(@"cancel")
-    .show()
+    .show
     .animated(YES)
     .completion(nil);
 ```
