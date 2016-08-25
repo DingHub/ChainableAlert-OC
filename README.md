@@ -10,7 +10,7 @@ in view controller:
 #import "UIViewController+ZRDChainableAlert.h"
 ```
 ```
-[self actionSheet:@"Title" message:@"message"]
+    [self actionSheet:@"Title" message:@"message"]
     .normalButton(@"normal1")
     .handler(^(ZRDChainableAlert *alert) {
         NSLog(@"normal1");
@@ -30,20 +30,18 @@ in view controller:
 ```
 or an laert with textFeilds:
 ```
-[self alert:@"Title" message:@"message"]
-    .textField()
-    .configrationHandler(^(UITextField *textField) {
+    [self alert:@"Title" message:@"message"]
+    .configTextField(^(UITextField *textField) {
         textField.placeholder = @"UserName";
     })
-    .textField()
-    .configrationHandler(^(UITextField *textField) {
+    .configTextField(^(UITextField *textField) {
         textField.placeholder = @"Password";
         textField.secureTextEntry = YES;
     })
     .normalButton(@"Login")
     .handler(^(ZRDChainableAlert *alert) {
         NSArray *textFields = alert.textFields;
-        NSLog(@"Username:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
+        NSLog(@"\nUsername:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
     })
     .cancelButton(@"cancel")
     .show
