@@ -26,12 +26,10 @@
 - (IBAction)showAlert:(id)sender {
     
     [self alert:@"Title" message:@"message"]
-    .textField()
-    .configurationHandler(^(UITextField *textField) {
+    .configTextField(^(UITextField *textField) {
         textField.placeholder = @"UserName";
     })
-    .textField()
-    .configurationHandler(^(UITextField *textField) {
+    .configTextField(^(UITextField *textField) {
         textField.placeholder = @"Password";
         textField.secureTextEntry = YES;
     })
@@ -40,6 +38,25 @@
         NSArray *textFields = alert.textFields;
         NSLog(@"\nUsername:%@\nPassword:%@", [textFields[0] text], [textFields[1] text]);
     })
+    .cancelButton(@"cancel")
+    .show
+    .animated(YES)
+    .completion(nil);
+    
+    
+    
+    [self actionSheet:@"Title" message:@"message"]
+    .normalButton(@"normal1")
+    .handler(^(ZRDChainableAlert *alert) {
+        NSLog(@"normal1");
+    })
+    .normalButton(@"normal2")
+    .normalButton(@"normal3")
+    .destructiveButton(@"destructive1")
+    .handler (^(ZRDChainableAlert *alert) {
+        NSLog(@"destructive1");
+    })
+    .destructiveButton(@"destructive2")
     .cancelButton(@"cancel")
     .show
     .animated(YES)
