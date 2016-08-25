@@ -28,7 +28,7 @@ in view controller:
     .completion(nil);
 
 ```
-or an laert with textFeilds:
+or an alert with textFeilds:
 ```
     [self alert:@"Title" message:@"message"]
     .configTextField(^(UITextField *textField) {
