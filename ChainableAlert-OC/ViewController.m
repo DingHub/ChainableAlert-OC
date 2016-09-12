@@ -44,7 +44,9 @@
     .completion(nil);
     
     
+    /* Another example */
     
+    /*
     [self actionSheet:@"Title" message:@"message"]
     .normalButton(@"normal1")
     .handler(^(ZRDChainableAlert *alert) {
@@ -61,6 +63,7 @@
     .show
     .animated(YES)
     .completion(nil);
+     */
     
 }
 @end
