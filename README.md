@@ -2,6 +2,9 @@
 Chainable usage of Alert.<br>
 ---
 We have a helper named ZRDChainableAlert, and a category of UIViewController to add chainable usage of UIalertController.<br>
+
+说明文档：[《探索之旅：链式语法》](http://www.swifthumb.com/thread-14991-1-1.html)
+
 Usage:
 ---
 in view controller:
